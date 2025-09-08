@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caren Jeruto | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+</style>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+  <style>
+
+       .services {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.services h2 span {
+  color: #f4c10f;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.service-card {
+  border: 4px solid #f4c10f;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.service-card .icon img {
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.service-card .hover-info {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f4c10f;
+  color: #111;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.service-card:hover .hover-info {
+  display: block;
+}
+
+.read-more a {
+  display: inline-block;
+  background-color: #1f2a2a;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 60px 20px;
+  background: #f8f8ff;
+}
+
+.about-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.about-text {
+  max-width: 600px;
+  margin-left: 40px;
+}
+
+.about-text h4 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #673ab7;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.download-cv {
+  display: inline-block;
+  border: 2px solid #673ab7;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #673ab7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+  background: #673ab7;
+  color: white;
+}
+.portfolio {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.portfolio h2 span {
+  color: #f4c10f;
+}
+
+.portfolio-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 300px;
+  height: 400px; /* taller card height per request */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Let iframe use full height without cropping */
+.portfolio-item iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+
+
+
+.contact-container {
+  margin-top: 100px;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+
+    .contact-left, .contact-right {
+      width: 48%;
+    }
+
+    .contact-left h2 {
+      font-size: 18px;
+      color: navy;
+      margin-bottom: 5px;
+    }
+
+    .contact-left p {
+      margin: 10px 0 20px;
+    }
+
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .input-group label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-group input, 
+    .input-group textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .send-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: navy;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      width: fit-content;
+    }
+
+    .send-btn:hover {
+      background: #007acc;
+    }
+
+    .footer {
+  background-color: #1f2a2a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 60px 20px;
+  background: #f8f8ff;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.skills-section h2 span { color: #f4c10f; }
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill {
+  background: #fff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.09); }
+
+.skill span {
+  display: block; font-weight: 700; margin-bottom: 10px; color: #111827;
+}
+
+.bar { background-color: #eceef3; height: 12px; border-radius: 999px; overflow: hidden; }
+
+.fill {
+  background: linear-gradient(90deg, #f4c10f, #ffd54d);
+  height: 100%; color: #111; font-size: 12px;
+  text-align: right; padding-right: 8px; line-height: 12px;
+  border-radius: 999px; transition: width 1s ease-in-out;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+}
+
+  /* CTA buttons for portfolio overlays */
+  .cta-row { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:8px; }
+  .btn { padding:8px 12px; border-radius:6px; font-size:.85rem; text-decoration:none; display:inline-block; }
+  .btn-live { background:#10b981; color:#fff; }
+  .btn-code { background:#111827; color:#fff; }
+  .btn-video { background:#f4c10f; color:#111; }
+  /* Pitch deck button */
+  .btn-deck { background:#7c3aed; color:#fff; }
+  /* Service icons via Font Awesome */
+  .service-card .icon i { font-size: 42px; color: #f4c10f; margin-bottom: 12px; }
+  /* Traction strip */
+  .traction { display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap; padding:16px 20px; background:#fffbe6; border:1px solid #fde68a; border-radius:12px; margin:20px 0 40px; }
+  .traction .kpi { font-weight:600; color:#7c2d12; }
+  </style>
+</head>
+<body>
+
+  <!-- Smooth scrolling -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId.length > 1) {
+            e.preventDefault();
+            const el = document.querySelector(targetId);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.nav a.active')?.classList.remove('active');
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // Animate skills bars when section enters viewport
+      const fills = Array.from(document.querySelectorAll('#skills .fill'));
+      if (fills.length) {
+        fills.forEach(el => {
+          el.dataset.target = el.style.width || '0%';
+          el.style.width = '0%';
+        });
+        const section = document.getElementById('skills');
+        const animate = () => fills.forEach(el => el.style.width = el.dataset.target || '0%');
+        if ('IntersectionObserver' in window && section) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { animate(); io.disconnect(); } });
+          }, { threshold: 0.3 });
+          io.observe(section);
+        } else {
+          animate();
+        }
+      }
+    });
+  </script>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="carr.png" alt="Caren Jeruto" class="profile-pic" />
+        <h2>Caren Jeruto</h2>
+  
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/caren-jeruto-831037286/?lipi=urn%3Ali%3Apage%3Aprofile_common_profile_index%3Bb2b59f26-8e7c-4025-9741-574a9401e957" target="_blank" rel="noopener">
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+  
+      <nav class="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="cv.html">Resume</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+  
+      
+      
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="home" class="slide active">
+              <div class="intro">
+                <h1>Caren Jeruto</h1>
+                <p id="typing"></p>
+              </div>
+            </section>
+        
+          
+        
+            <!-- Add other sections: resume, portfolio, contact... -->
+
+
+            
+          </main>
+
+          
+        </div>
+
+        <section class="about" id="about">
+  <div class="about-image">
+    <img src="carry.png" alt="Nelly" />
+  </div>
+  <div class="about-text">
+    <h4>Who Am I ?</h4>
+    <h2>About Me</h2>
+    <p class="intro">
+      My name is <strong>Caren Jeruto</strong>, and I am passionate about technology and its power to create positive change.
+      I have a strong interest in digital innovation and using tech-based solutions to address real-life challenges.
+      My journey in tech is driven by a desire to bridge gaps, especially in communities where access to information and opportunity is limited.
+    </p>
+    <p>
+      I've worked with startups and community projects to create impactful digital tools—like the <strong>BilaWoga</strong> emergency alert app and the <strong>Shield Maidens</strong> platform fighting gender-based violence online. My approach blends technical skills with a human-centered purpose.
+    </p>
+    <p>
+      Beyond coding, I contribute to digital literacy and empowerment programs, speak on tech inclusion, and mentor young girls in STEM.
+    </p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+      <a href="https://docs.google.com/document/d/1f3c7RLdZQaQDTRq7fWV_9PRc6b5_YCNR/edit?usp=sharing&ouid=114972175812724306706&rtpof=true&sd=true" class="download-cv">Download CV</a>
+      <a href="#contact" class="download-cv" style="border-color:#10b981;color:#10b981;">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+  <section class="services" id="services">
+  <h2><span>My</span> Services</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <div class="icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+      <h3>Full‑Stack Development</h3>
+      <div class="hover-info">Web and mobile apps using JavaScript, PHP, Flutter</div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+      <h3>Website Design</h3>
+      <div class="hover-info">Responsive, accessible, SEO‑ready websites</div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+      <h3>Database & APIs</h3>
+      <div class="hover-info">MySQL, REST APIs, integrations, best practices</div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
+      <h3>Pitch & Documentation</h3>
+      <div class="hover-info">Investor decks, thesis reports, product docs</div>
+    </div>
+  </div>
+  <div class="read-more">
+    <a href="#portfolio">See Work</a>
+  </div>
+</section>
+
+<!-- Skills Section (moved inline) -->
+<section id="skills" class="skills-section">
+  <h2><span>My</span> Skills</h2>
+  <div class="skills-container">
+    <div class="skill">
+      <span>HTML</span>
+      <div class="bar"><div class="fill" style="width: 100%">100%</div></div>
+    </div>
+    <div class="skill">
+      <span>CSS</span>
+      <div class="bar"><div class="fill" style="width: 90%">90%</div></div>
+    </div>
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="bar"><div class="fill" style="width: 75%">75%</div></div>
+    </div>
+    <div class="skill">
+      <span>PHP</span>
+      <div class="bar"><div class="fill" style="width: 80%">80%</div></div>
+    </div>
+    <div class="skill">
+      <span>Flutter</span>
+      <div class="bar"><div class="fill" style="width: 65%">65%</div></div>
+    </div>
+    <div class="skill">
+      <span>React</span>
+      <div class="bar"><div class="fill" style="width: 70%">70%</div></div>
+    </div>
+    <div class="skill">
+      <span>Python</span>
+      <div class="bar"><div class="fill" style="width: 55%">55%</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <h2><span>My</span> Portfolio</h2>
+  <div class="portfolio-gallery">
+    <div class="portfolio-item">
+      <iframe src="https://theshieldmaidens.org/" title="ShieldMaidens Live Preview"></iframe>
+      <div class="overlay"><a href="https://theshieldmaidens.org" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">ShieldMaidens Live — View Site</a></div>
+    </div>
+    <div class="portfolio-item">
+      <iframe
+        src="https://www.loom.com/embed/2d197f017c804c6b8f3097a98529d95f?sid=8a632ddd-de1f-426f-8b88-23a828a4348a&autoplay=1&muted=1&loop=1"
+        title="Project 2 video"
+        frameborder="0"
+        allow="autoplay; fullscreen; clipboard-write"
+        allowfullscreen
+      ></iframe>
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>FinanceBudget Web</h3>
+          <div class="cta-row">
+            <a class="btn btn-code" href="https://github.com/carey254/financial-management" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-video" href="https://www.loom.com/share/2d197f017c804c6b8f3097a98529d95f" target="_blank" rel="noopener">Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <iframe
+        src="https://www.loom.com/embed/edb65e6541f749adb3f5e7224b6892fb?autoplay=1&muted=1&loop=1"
+        title="AfricaLearn - Loom video"
+        frameborder="0"
+        allow="autoplay; fullscreen; clipboard-write; picture-in-picture; encrypted-media"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+      ></iframe>
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>AfricaLearn</h3>
+          <div class="cta-row">
+            <a class="btn btn-video" href="https://www.loom.com/share/edb65e6541f749adb3f5e7224b6892fb" target="_blank" rel="noopener">Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="portfolio-item">
+      <iframe
+        src="https://www.loom.com/embed/e1e1e2447cba4b59a82dfecab5437153?autoplay=1&muted=1&loop=1"
+        title="Three BilaWoga - demo"
+        frameborder="0"
+        allow="autoplay; fullscreen; clipboard-write"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>BilaWoga App</h3>
+          <p style="margin:.25rem 0 .5rem; opacity:.95">Community safety emergency alerts.</p>
+          <div class="cta-row">
+            <a class="btn btn-code" href="https://github.com/carey254/BilawogaBeSafe" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-video" href="https://www.loom.com/share/e1e1e2447cba4b59a82dfecab5437153" target="_blank" rel="noopener">Video</a>
+            <a class="btn btn-deck" href="https://www.canva.com/design/DAGxrT0enPQ/C3Y0I2FsI3qXX7hn5JHQCw/edit" target="_blank" rel="noopener">Pitch Deck</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Traction strip -->
+<section aria-label="Traction" style="padding:0 20px;">
+  <div class="traction">
+    <span class="kpi">3 launched projects</span>
+    <span class="kpi">+2 community programs</span>
+    <span class="kpi">Talks on tech inclusion</span>
+  </div>
+</section>
+
+<!-- Contact Section -->
+  <div id="contact" class="contact-container">
+    <div class="contact-left">
+      
+      <h2>Write Me</h2>
+      <p>carenjeruto477.com</p>
+
+      <iframe 
+        src="https://www.google.com/maps?q=Nairobi&output=embed" 
+        width="300" height="200" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <p>
+        <a href="https://www.google.com/maps/place/Nairobi/" target="_blank" rel="noopener">
+          📍 Open in Google Maps
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-right">
+      <form action="submit_form.php" method="POST">
+        <div class="input-row">
+          <div class="input-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="input-group">
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="Subject">
+        </div>
+
+        <div class="input-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+<footer class="footer">
+  <p>&copy; 2025 Caren| All rights reserved.</p>
+</footer>
+
+        
+</body>
+</html>
